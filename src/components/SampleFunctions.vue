@@ -3,7 +3,9 @@
     <div>
       <button id="sampleButton" @click="onClick">{{ sampleLabel }}</button>
     </div>
-    <div><span id="sampleText">メッセージを表示する場所</span></div>
+    <div>
+      <span id="sampleText">{{ sampleText }}</span>
+    </div>
   </div>
 </template>
 

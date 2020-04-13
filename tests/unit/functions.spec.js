@@ -32,5 +32,9 @@ describe("SampleFunctions.vue", () => {
         "メッセージを表示する場所"
       );
     });
+
+    it("ラベルの初期値を割り当てられた変数で確認する。", () => {
+      expect(wrapper.vm.sampleText).toBe("メッセージを表示する場所");
+    });
   });
 });
