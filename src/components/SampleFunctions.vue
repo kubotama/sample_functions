@@ -1,10 +1,24 @@
 <template>
-  <div></div>
+  <div>
+    <div>
+      <button id="sampleButton" @click="onClick">{{ sampleLabel }}</button>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "SampleFunctions"
+  name: "SampleFunctions",
+  data() {
+    return {
+      sampleLabel: "functionsを呼び出す"
+    };
+  },
+  methods: {
+    onClick() {
+      return;
+    }
+  }
 };
 </script>
 
