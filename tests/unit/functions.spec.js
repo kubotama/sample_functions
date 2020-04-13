@@ -36,5 +36,10 @@ describe("SampleFunctions.vue", () => {
     it("ラベルの初期値を割り当てられた変数で確認する。", () => {
       expect(wrapper.vm.sampleText).toBe("メッセージを表示する場所");
     });
+
+    it("テキストを変更した結果を変数で確認する。", () => {
+      wrapper.setData({ sampleText: "メッセージを変更した" });
+      expect(wrapper.vm.sampleText).toBe("メッセージを変更した");
+    });
   });
 });
