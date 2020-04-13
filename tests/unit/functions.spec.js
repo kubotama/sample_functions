@@ -25,4 +25,12 @@ describe("SampleFunctions.vue", () => {
     wrapper.find("#sampleButton").trigger("click");
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
+  describe("テキストを表示する領域", () => {
+    it("ラベル(メッセージを表示する場所)が正しい。", () => {
+      expect(wrapper.find("#sampleText").text()).toBe(
+        "メッセージを表示する場所"
+      );
+    });
+  });
 });
