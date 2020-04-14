@@ -1,5 +1,4 @@
 import { shallowMount } from "@vue/test-utils";
-import axios from "axios";
 import SampleFunctions from "@/components/SampleFunctions.vue";
 
 describe("SampleFunctions.vue", () => {
@@ -41,22 +40,6 @@ describe("SampleFunctions.vue", () => {
     it("テキストを変更した結果を変数で確認する。", () => {
       wrapper.setData({ sampleText: "メッセージを変更した" });
       expect(wrapper.vm.sampleText).toBe("メッセージを変更した");
-    });
-  });
-
-  describe("Netlify functions", () => {
-    it("ステータスコードとデータを確認する。", done => {
-      axios
-        .get("/.netlify/functions/sample")
-        .then(response => {
-          expect(response.status).toBe(200);
-          expect(response.data).toBe("サンプル");
-          done();
-        })
-        .catch(() => {
-          expect(false).toBeTruthy();
-          done();
-        });
     });
   });
 });
