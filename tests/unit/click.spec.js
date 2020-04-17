@@ -19,4 +19,13 @@ describe("コードの呼び出し", () => {
 
     expect(axios.get.mock.calls.length).toBe(1);
   });
+
+  it("引数を確認する。", () => {
+    wrapper.find("#sampleButton").trigger("click");
+
+    expect(axios.get.mock.calls[0].length).toBe(1);
+    expect(axios.get.mock.calls[0][0]).toBe(
+      "http://localhost:9000/.netlify/functions/sample"
+    );
+  });
 });
