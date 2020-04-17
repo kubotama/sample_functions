@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "SampleFunctions",
   data() {
@@ -20,7 +22,14 @@ export default {
   },
   methods: {
     onClick() {
-      return;
+      axios
+        .get("http://localhost:9000/.netlify/functions/sample")
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
   }
 };
