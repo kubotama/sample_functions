@@ -25,7 +25,7 @@ export default {
       axios
         .get("http://localhost:9000/.netlify/functions/sample")
         .then(response => {
-          console.log(response);
+          this.sampleText = response.body;
         })
         .catch(error => {
           console.error(error);

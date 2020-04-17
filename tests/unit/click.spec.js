@@ -29,8 +29,8 @@ describe("コードの呼び出し", () => {
     );
   });
 
-  it("ボタンがクリックされた後は、テキスト領域に'sample'が設定されている。", () => {
-    wrapper.find("#sampleButton").trigger("click");
+  it("ボタンがクリックされた後は、テキスト領域に'sample'が設定されている。", async () => {
+    await wrapper.find("#sampleButton").trigger("click");
     expect(wrapper.vm.sampleText).toBe("sample");
   });
 });
