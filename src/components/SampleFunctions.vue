@@ -23,7 +23,7 @@ export default {
   methods: {
     onClick() {
       axios
-        .get("http://localhost:9000/.netlify/functions/sample")
+        .get(this.getFunctionUrl(window.location.href))
         .then(response => {
           this.sampleText = response.body;
         })

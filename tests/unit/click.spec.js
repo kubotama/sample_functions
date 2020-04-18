@@ -44,9 +44,10 @@ describe("コードのURLを取得する。", () => {
   });
 
   it.each`
-    beforeUrl                  | afterUrl
-    ${"http://localhost/"}     | ${"http://localhost:9000/.netlify/functions/sample"}
-    ${"http://localhost:8080"} | ${"http://localhost:9000/.netlify/functions/sample"}
+    beforeUrl                                           | afterUrl
+    ${"http://localhost/"}                              | ${"http://localhost:9000/.netlify/functions/sample"}
+    ${"http://localhost:8080"}                          | ${"http://localhost:9000/.netlify/functions/sample"}
+    ${"https://kubotama-sample-functions.netlify.com/"} | ${"https://kubotama-sample-functions.netlify.com/.netlify/functions/sample"}
   `("$before -> $after", ({ beforeUrl, afterUrl }) => {
     expect(wrapper.vm.getFunctionUrl(beforeUrl)).toBe(afterUrl);
   });
