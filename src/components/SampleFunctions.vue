@@ -25,7 +25,7 @@ export default {
       axios
         .get(this.getFunctionUrl(window.location.href))
         .then(response => {
-          this.sampleText = response.body;
+          this.sampleText = response.data;
         })
         .catch(error => {
           console.error(error);

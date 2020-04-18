@@ -4,7 +4,7 @@ import SampleFunctions from "@/components/SampleFunctions.vue";
 
 jest.mock("axios");
 axios.get.mockImplementation(() =>
-  Promise.resolve({ statusCode: 200, body: "sample" })
+  Promise.resolve({ statusCode: 200, data: "sample" })
 );
 
 describe("コードの呼び出し", () => {
