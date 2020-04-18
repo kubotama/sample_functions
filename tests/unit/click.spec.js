@@ -43,15 +43,11 @@ describe("コードのURLを取得する。", () => {
     wrapper = shallowMount(SampleFunctions);
   });
 
-  it("http://localhost/", () => {
-    expect(wrapper.vm.getFunctionUrl("http://localhost/")).toBe(
-      "http://localhost:9000/.netlify/functions/sample"
-    );
-  });
-
-  it("http://localhost:8080", () => {
-    expect(wrapper.vm.getFunctionUrl("http://localhost:8080")).toBe(
-      "http://localhost:9000/.netlify/functions/sample"
-    );
+  it.each`
+    beforeUrl                  | afterUrl
+    ${"http://localhost/"}     | ${"http://localhost:9000/.netlify/functions/sample"}
+    ${"http://localhost:8080"} | ${"http://localhost:9000/.netlify/functions/sample"}
+  `("$before -> $after", ({ beforeUrl, afterUrl }) => {
+    expect(wrapper.vm.getFunctionUrl(beforeUrl)).toBe(afterUrl);
   });
 });
