@@ -9,19 +9,20 @@ axios.get.mockImplementation(() =>
 
 describe("コードの呼び出し", () => {
   let wrapper;
+  const idButton = "#sampleButton";
 
   beforeEach(() => {
     wrapper = shallowMount(SampleFunctions);
   });
 
   it("axios.getを呼び出す。", () => {
-    wrapper.find("#sampleButton").trigger("click");
+    wrapper.find(idButton).trigger("click");
 
     expect(axios.get.mock.calls.length).toBe(1);
   });
 
   it("引数を確認する。", () => {
-    wrapper.find("#sampleButton").trigger("click");
+    wrapper.find(idButton).trigger("click");
 
     expect(axios.get.mock.calls[0].length).toBe(1);
     expect(axios.get.mock.calls[0][0]).toBe(
@@ -30,7 +31,7 @@ describe("コードの呼び出し", () => {
   });
 
   it("ボタンがクリックされた後は、テキスト領域に'sample'が設定されている。", async () => {
-    await wrapper.find("#sampleButton").trigger("click");
+    await wrapper.find(idButton).trigger("click");
     expect(wrapper.vm.sampleText).toBe("sample");
   });
 });
