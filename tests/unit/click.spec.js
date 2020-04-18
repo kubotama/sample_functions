@@ -35,3 +35,15 @@ describe("コードの呼び出し", () => {
     expect(wrapper.vm.sampleText).toBe("sample");
   });
 });
+
+describe("コードのURLを取得する。", () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallowMount(SampleFunctions);
+  });
+
+  it("http://localhost/", () => {
+    expect(wrapper.vm.getFunctionUrl("http://localhost/")).toBe("http://localhost:9000/.netlify/functions/sample");
+  });
+});
