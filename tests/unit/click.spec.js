@@ -44,6 +44,8 @@ describe("コードのURLを取得する。", () => {
   });
 
   it("http://localhost/", () => {
-    expect(wrapper.vm.getFunctionUrl("http://localhost/")).toBe("http://localhost:9000/.netlify/functions/sample");
+    expect(wrapper.vm.getFunctionUrl("http://localhost/")).toBe(
+      "http://localhost:9000/.netlify/functions/sample"
+    );
   });
 });
