@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "SampleFunctions",
   data() {
@@ -20,7 +22,22 @@ export default {
   },
   methods: {
     onClick() {
-      return;
+      axios
+        .get(this.getFunctionUrl(window.location.href))
+        .then(response => {
+          this.sampleText = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    getFunctionUrl(pageUrl) {
+      const url = new URL(pageUrl);
+      if (url.hostname === "localhost") {
+        url.port = 9000;
+      }
+      url.pathname = ".netlify/functions/sample";
+      return url.href;
     }
   }
 };
