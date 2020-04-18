@@ -48,4 +48,10 @@ describe("コードのURLを取得する。", () => {
       "http://localhost:9000/.netlify/functions/sample"
     );
   });
+
+  it("http://localhost:8080", () => {
+    expect(wrapper.vm.getFunctionUrl("http://localhost:8080")).toBe(
+      "http://localhost:9000/.netlify/functions/sample"
+    );
+  });
 });
