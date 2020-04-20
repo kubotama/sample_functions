@@ -1,29 +1,5 @@
-# functions
+# Netlify functionsを利用したサーバーレスアプリケーションのサンプル
 
-## Project setup
-```
-yarn install
-```
+Netlify Functionsの設定、およびNetlify Functionsのコード(以下コードと呼ぶ)の作成、コードを呼び出すwebページの作成について説明するためのサンプルである。webページに表示されているボタンをクリックするとコードにアクセスして、コードから返された文字列をwebページ上に表示する。
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+webサイトは[こちらのサイト](https://kubotama-sample-functions.netlify.com/)である。
