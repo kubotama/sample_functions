@@ -61,5 +61,8 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
+  },
+  "resolutions": {
+    "serialize-javascript": "3.1.0"
   }
 }
