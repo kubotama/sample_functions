@@ -36,3 +36,6 @@ yarn-error.log*
 
 # Firebase
 .firebaserc
+.firebase/
+/public/
+
