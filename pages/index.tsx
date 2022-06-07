@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -9,7 +11,13 @@ const Home: NextPage = () => {
   const [returnText, setReturnText] = useState("");
 
   const onClickRequest = () => {
-    setReturnText("requested");
+    axios
+      .get(
+        "http://localhost:5001/sample-functions-70b90/us-central1/helloWorld"
+      )
+      .then((res) => {
+        setReturnText(res.data);
+      });
   };
 
   return (
