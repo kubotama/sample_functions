@@ -39,3 +39,5 @@ yarn-error.log*
 .firebase/
 /public/
 
+functions/firebase-debug.log
+functions/ui-debug.log
