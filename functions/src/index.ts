@@ -5,5 +5,6 @@ import * as functions from "firebase-functions";
 //
 export const helloWorld = functions.https.onRequest((request, response) => {
   functions.logger.info("Hello logs!", {structuredData: true});
+  response.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   response.send("Hello from Firebase!");
 });
