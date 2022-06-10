@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { Button } from "@mui/material";
+
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -36,8 +38,12 @@ const Home: NextPage = () => {
           sample page of Cloud Functions for Firebase
         </h1>
         <div className={styles.description}>{returnText}</div>
-        <button onClick={onClickRequest}>request</button>
-        <button onClick={() => setReturnText("")}>clear</button>
+        <Button variant="contained" onClick={onClickRequest}>
+          request
+        </Button>
+        <Button variant="contained" onClick={() => setReturnText("")}>
+          clear
+        </Button>
       </main>
     </div>
   );
